@@ -1,0 +1,17 @@
+
+\begin{tikzpicture}[node distance=1.2cm]
+\node[draw,rounded corners] (a) {Knowledge Creation};
+\node[draw,rounded corners,right=of a] (b) {Knowledge Absorption};
+\node[draw,rounded corners,right=of b] (c) {Technology Diffusion};
+\node[draw,rounded corners,right=of c] (d) {Institutionalization};
+
+\draw[->] (a)--(b);
+\draw[->] (b)--(c);
+\draw[->] (c)--(d);
+
+\node[draw,rounded corners,below=1cm of b] (e) {University Technological Innovation Capability};
+\draw[->] (a)--(e);
+\draw[->] (b)--(e);
+\draw[->] (c)--(e);
+\draw[->] (d)--(e);
+\end{tikzpicture}

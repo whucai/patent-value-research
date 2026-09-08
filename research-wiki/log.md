@@ -1,0 +1,32 @@
+# Research Wiki Log
+
+_Append-only timeline._
+- `2026-09-04T12:03:25Z` Wiki initialized
+- `2026-09-04T12:22:47Z` ingest_paper: ingested paper:lai2026_identification_valuable_patents (arxiv:)
+- `2026-09-04T12:22:47Z` ingest_paper: ingested paper:hsu2021_benchmarking_university_patent (arxiv:)
+- `2026-09-04T12:22:47Z` ingest_paper: ingested paper:lin2025_patent_gold_rush (arxiv:)
+- `2026-09-04T12:22:47Z` ingest_paper: ingested paper:yang2024_technological_novelty_technology (arxiv:)
+- `2026-09-04T12:22:47Z` ingest_paper: ingested paper:shen2023_prestige_technologytransaction_prices (arxiv:)
+- `2026-09-04T12:22:47Z` ingest_paper: ingested paper:guo2026_intellectual_property_services (arxiv:)
+- `2026-09-04T12:23:14Z` upsert_idea: added idea:potential_realization_gap [stage=active outcome=pending]
+- `2026-09-04T12:23:14Z` upsert_idea: added idea:patent_label_construct_audit [stage=proposed outcome=pending]
+- `2026-09-04T12:23:14Z` upsert_idea: added idea:prestige_screening_hidden_gems [stage=proposed outcome=pending]
+- `2026-09-04T12:23:14Z` upsert_idea: added idea:commercialization_competing_risks [stage=proposed outcome=pending]
+- `2026-09-04T12:23:14Z` upsert_idea: added idea:delayed_value_realization [stage=proposed outcome=pending]
+- `2026-09-04T12:23:14Z` upsert_idea: added idea:university_industry_demand_alignment [stage=proposed outcome=pending]
+- `2026-09-04T12:23:14Z` upsert_idea: added idea:dynamic_patent_value_prediction [stage=archived outcome=pending]
+- `2026-09-04T12:23:14Z` upsert_idea: added idea:novelty_transfer_inverted_u [stage=archived outcome=pending]
+- `2026-09-04T12:23:15Z` upsert_idea: added idea:multi_agent_patent_value [stage=archived outcome=pending]
+- `2026-09-04T12:23:23Z` research-pipeline: ingested 6 core papers and recorded 9 ideas (1 active, 5 proposed, 3 archived); selected potential-realization gap; empirical work blocked pending data intake.
+- `2026-09-04T13:24:36Z` ingest_paper: skipped existing paper lai2026_identification_valuable_patents.md (slug dedup)
+- `2026-09-04T13:24:36Z` ingest_paper: ingested paper:hu2023_evaluation_identification_potential (arxiv:)
+- `2026-09-04T13:24:36Z` ingest_paper: skipped existing paper hsu2021_benchmarking_university_patent.md (slug dedup)
+- `2026-09-04T13:24:36Z` ingest_paper: skipped existing paper lin2025_patent_gold_rush.md (slug dedup)
+- `2026-09-04T13:24:36Z` ingest_paper: skipped existing paper yang2024_technological_novelty_technology.md (slug dedup)
+- `2026-09-04T13:24:36Z` ingest_paper: skipped existing paper shen2023_prestige_technologytransaction_prices.md (slug dedup)
+- `2026-09-04T13:24:36Z` ingest_paper: ingested paper:liu2025_how_does_patent (arxiv:)
+- `2026-09-04T13:24:36Z` ingest_paper: skipped existing paper guo2026_intellectual_property_services.md (slug dedup)
+- `2026-09-04T13:24:36Z` ingest_paper: ingested paper:gu2022_spatial_interactions_commercialisation (arxiv:)
+- `2026-09-04T13:24:36Z` ingest_paper: ingested paper:wu2015_commercialization_university_inventions (arxiv:)
+- `2026-09-04T13:34:15Z` ingest_paper: ingested paper:sine2003_halo_effect_technology (arxiv:)
+- `2026-09-04T13:34:15Z` ingest_paper: ingested paper:gong2020_innovation_value_chain (arxiv:)

@@ -1,0 +1,33 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fls
+*.fdb_latexmk
+*.fdb
+*.log
+*.out
+*.run.xml
+*.toc
+*.synctex.gz
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*-SAVE-ERROR
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Tool runtime / locks
+*.lock
+
+# Claude local settings / runtime temp (per-user)
+.claude/

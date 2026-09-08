@@ -1,0 +1,225 @@
+\documentclass[12pt]{article}
+
+% PAGE LAYOUT & MARGINS
+\usepackage[a4paper, margin=1in, bottom=35mm]{geometry} 
+
+% SECTION TITLE FORMATTING
+\usepackage{titlesec}
+\usepackage{xcolor} % for custom colors
+\definecolor{darkforestgreen}{RGB}{1, 68, 42} % Define a dark green color for headings
+
+% Format section titles with color and font size
+\titleformat{\section}[block]{\normalfont\bfseries\Large\color{darkforestgreen}}{\thesection.}{1em}{}
+\titleformat{\subsection}[block]{\normalfont\bfseries\large\color{darkforestgreen}}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}[block]{\normalfont\bfseries\normalsize\color{darkforestgreen}}{\thesubsubsection.}{1em}{}
+
+% GRAPHICS, TABLES, AND CAPTION FORMATTING
+\usepackage{graphicx}        % for including images
+\usepackage{caption}         % customize captions
+\usepackage[table]{xcolor}   % colored table rows/cells
+\usepackage{array}           % advanced table features
+
+% TEXT FORMATTING & ADJUSTMENTS
+\usepackage{ragged2e}       % for \justifying (full justification)
+\usepackage{changepage}     % for adjustwidth environment (used in blockquote)
+\usepackage{quoting}        % quotation environment
+
+\usepackage{enumitem}       % better control over list spacing
+\usepackage{setspace}       % for line spacing control (commented out by default)
+
+% FONTS
+% Use fontspec with Lora font files in a "Font" folder next to main .tex
+% Requires compiling with XeLaTeX or LuaLaTeX
+\usepackage{fontspec} 
+\setmainfont{Lora-Regular.ttf}[
+  Path = Font/,                   % relative path to the font folder
+  BoldFont = Lora-SemiBold.ttf,
+  ItalicFont = Lora-Italic.ttf,
+  BoldItalicFont = Lora-SemiBoldItalic.ttf
+]
+% HYPERREF SETTINGS
+% Colored, clickable links, citation links black to avoid blue year
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=black, urlcolor=blue]{hyperref}
+
+% BIBLIOGRAPHY WITH APA STYLE VIA BIBLATEX and biber
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{references.bib}
+
+% Add spacing between bibliography entries for readability
+\AtBeginBibliography{\setlength{\itemsep}{1\baselineskip}}
+
+% PAGE STYLE (HEADER AND FOOTER)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}                      % clear header/footer fields
+\renewcommand{\headrulewidth}{0pt} % no header line
+\renewcommand{\footrulewidth}{0pt} % no footer line
+
+% Centered footer with journal info and page number
+\fancyfoot[C]{%
+  \vspace{0.5em}%
+  Information Research, Vol. ?? No. ? (20??)\\
+  \rule{0.65\linewidth}{0.4pt}\\
+  \thepage
+}
+
+% REMOVE SECTION NUMBERING
+\setcounter{secnumdepth}{0}
+
+% REMOVE PARAGRAPH INDENTATION BY DEFAULT
+\setlength{\parindent}{0pt}
+
+% CUSTOM BLOCKQUOTE ENVIRONMENT
+% Adds vertical spacing before/after, indents left by 5em,
+% fully justified, no first-line indent, normal size font
+\newenvironment{blockquote}
+  {%
+    \vspace{1em}%
+    \begin{adjustwidth}{5em}{0em}%
+    \justifying%
+    \setlength{\parindent}{0pt}%
+    \normalsize%
+  }
+  {%
+    \end{adjustwidth}%
+    \vspace{1em}%
+  }
+
+% DISCLAIMER 
+\usepackage{xcolor} % Add in your preamble if not already there
+\usepackage{fancyhdr} % Add if not already present
+
+% TITLE SETUP (colored with dark green)
+\usepackage{titling}   % for \thetitle command
+\title{\textcolor{darkforestgreen}{Title – the title should preferable not be longer than three rows. Use the style ‘Title’}}
+
+
+% Abstract format
+\newenvironment{structuredabstract}{
+  \section*{Abstract}
+  
+\emph{(A structured abstract is required of 150-200 words, using the headings shown below. Use the style Abstract. Please refer to the following example when formatting your abstract.)} 
+}{}
+
+\title{\textcolor{darkforestgreen}{Title – the title should preferable not be longer than three rows. Use the style ‘Title’}}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+
+\begin{center}
+  \includegraphics[width=0.2\textwidth]{Images/IR_Bild.png}
+  \\\vspace{1em}
+  {\normalsize Information Research - Vol. ?? No. ? (20??) \par}
+  \vspace{1em}
+  {\LARGE \bfseries \thetitle \par}
+\end{center}
+
+% Name of Author(s) placeholder
+\begin{center}
+Name of Author(s): \emph{(Style ‘author’. Note that this information should be omitted from the first submission of the paper to satisfy the needs of double blind reviewing. This information can be added during the copy-editing process.)}\\\vspace{1em}
+% DOI placeholder
+DOI: \emph{leave as is, will be created by the journal}\\\vspace{1em}
+
+% Disclaimer
+\emph{\textcolor{red}{\textbf{Disclaimer.} This LaTeX template is intended exclusively for use at the iConference (remove disclaimer info for final submission).}}
+\end{center}
+
+\begin{adjustwidth}{1.2cm}{1.2cm}
+\begin{structuredabstract}
+
+\medskip
+\textbf{Introduction.} We report an investigation designed to identify the role of uncertainty in the information search process. Uncertainty has been proposed as a key factor in driving the search for information.
+
+\medskip
+\textbf{Method.} Pre-search, post-search and follow-up interviews were conducted...
+
+\medskip
+\textbf{Analysis.} Both quantitative and qualitative analyses were carried out on the data, which related to 111 individual researchers.
+
+\medskip
+\textbf{Results.} It proved possible to operationalise the uncertainty concept and to demonstrate that uncertainty declined through the problem-solving process. 
+
+\medskip
+\textbf{Conclusion.} Uncertainty appears to have two dimensions: the 'objective', cognitive uncertainty resulting from a perceived lack of knowledge in a field and the 'affective' uncertainty. (Choose between Conclusion or Conclusions. If not changed Conclusion will be used.)
+\end{structuredabstract}
+\end{adjustwidth}
+\section{Introduction (use style 'Heading 2')}
+To fully use this template, you need the Lora font.  If you do not already have it, you can download it for free from Google Fonts at: \url{https://fonts.google.com/specimen/Lora }\\\\
+If you are using a Mac, you can follow this guide to install the font: \url{https://support.apple.com/en-nz/guide/font-book/fntbk1000/mac}\\\\
+To save yourself time, increase your chances of a favourable review, and help speed up the publication process of your research, consider following the guidelines below while writing (or otherwise preparing your text for submission).\\\\
+You must use this template and follow the instructions in this template. The more you deviate the longer it will take for your paper to be published. Papers that deviate to much from the template will be sent back in order for you to once again use the template in the correct way. If you run into any issues that you can’t solve, feel free to contact us for help.
+Use style ‘Normal’ for all text from now on in the paper and do only use the styles that are prepared in this template. Do not change any of the styles provided and do not change any line height or line spacing. Do not change the header and footer in the paper. Also, no comments should be left in the version that you finally submit.\\\\
+All URLs that you provide (in the paper, among references, in Appendix) should be clickable and visually indicate that they are URLs, i.e. the classic blue colour with underline.
+
+
+\subsection{Second level heading, use style ‘Heading 3’}
+\subsubsection{Third level heading, use style ‘Heading 4’}
+
+Note that quotations in the text should be in single quotation marks, e.g., \emph{‘this is an in-text quotation with a citation at the end’} (\cite{andronico2006blind}).  Quotations of 40 or more words are indented, but do not require quotation marks, e.g.,
+
+\begin{blockquote}
+Preliminary observation suggests that occasional projects are more likely than their one-off cousins to originate in or be motivated by agreeable obligation. Examples of occasional projects include the sum of culinary, decorative or other creative activities undertaken, for example, at home or at work for a religious occasion or someone’s birthday. (\cite{acuna2012hci})
+\end{blockquote}
+
+\section{Tables and Figures}
+
+Tables and figures should be provided as per the following examples on the next page. Every table and figure should have a caption under it named accordingly and numbered. Tables should follow the style of the journal and should be centred, with the caption following the table, using the Lora font, 9pt. for the table contents. Figures should be suitably sized and should also be centred, with the caption centred in 9pt Lora. Only the words ‘Table X.’ or ‘Figure X.’ should be in bold. The captions should not be longer than one, or two, sentences. No text should be before the caption, if you need clarification of things in the table/figure, write it in the caption or in close proximity to the table/figure. All tables/figures should also be in portrait mode.\\\\
+Tables should not be longer than one full page, including the caption. If you need longer tables, please consider putting them into the Appendix.\\\\
+All figures should also be uploaded separately one by one, to OJS, named fig1/fig2 and so on. Please note that an image of a table is considered a figure and should be named that way.
+
+\begin{table}[h!]
+\begin{tabular}{|l|c|}
+\hline
+\rowcolor{black}
+\color{white} Catalyst & \color{white} Instances \\
+\hline
+Specific person, family, names & 75 \\ \hline
+Discovery of photograph or document & 10 \\ \hline
+Research trip preparation & 9 \\ \hline
+Non-specific family or names & 9 \\ \hline
+Request for help from friend & 7 \\ \hline
+Received data from other researcher or family & 6 \\ \hline
+\end{tabular}
+\centering
+\caption*{\textbf{Table 1.} This text should be normal and not bold.}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{Images/fig1.png}
+\caption*{\textbf{Figure 1.} This text should be normal and not bold.}
+\end{figure}
+
+If you have multiple images as one figure, they should be uploaded as one image and not as multiple. If you have multiple figures as one image, you should separate them, so you have one image per figure.
+
+\section*{Acknowledgements (style ‘Heading 2’, omitted on first submission)}
+(It is usual to acknowledge the support of your funding source, or your institution, participants in the research programme, and the contributions of the referees. If the copy-editor has given particular assistance, acknowledgement is also welcome.)
+
+\section*{About the author(s) (style ‘Heading 2’, omitted on first submission)}
+
+Brief biographies of the authors are required.  These should provide only the basic details of the author’s education, present position, research interests and contact e-mail address, e.g., \\\\
+\textbf{Author Name }is an Associate Professor in Information School X, University of the Mid-West, Nebraska, USA... \url{authors@email.here}
+
+Repeat the structure of the first author for all authors, if there is more than one.
+
+\section*{Information References}
+References should be prepared using APA7.\\\\
+\textbf{Archive every URL mentioned in your reference list} except for DOIs or resources that are already archived in an official repository, such as: institutional research repositories, Zenodo.org, arXiv.org, the Internet Archive etc. This is essential to guard against link rot, since Web content frequently moves location or disappears from the Web. Web pages should be archived using the \href{https://web.archive.org/}{Internet Archive's Wayback Machine} (or a similar service), and their references should include the archived link. 
+% Beispiel für Listungen im Quellenverzeichnis ohne direkte Zitierung im Text
+\nocite{bannon2011reimagining}
+\nocite{hollis2019information}
+\nocite{strauss1990basics}
+\nocite{williamson2017methods}
+\nocite{wilson2012interactions}
+\printbibliography
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,433 @@
+\section{Introduction}\label{sec:introduction}
+Two universities with the same number of patents can produce them through
+different knowledge processes: one draws on a narrow set of external sources
+and refines an established core; the other connects technical elements that
+rarely appear together and is later reused by organizations outside its own
+field. Patent counts and citations record the output of both institutions but
+not the difference between them \citep{griliches1990,hall2005,nagaoka2010}.
+Understanding how institutional knowledge structures change therefore requires
+reading patents as relational documents---linked to classifications, texts,
+earlier references, later citing records, and dates---rather than as units to
+be counted.
+
+Information science already treats documents this way. Bibliographic coupling
+and co-citation identify intellectual connections \citep{kessler1963,small1973,price1965};
+knowledge maps represent domains and their change over time
+\citep{borner2003,chen2006,vaneck2010}; patent overlays extend these methods to
+technology \citep{rafols2010,kay2014,leydesdorff2014,yan2017}. What is missing
+is a way to move from a map, which shows where an institution is located at one
+moment, to a trajectory, which shows how its knowledge relations change and
+whether that change exceeds sampling and measurement noise.
+
+This paper proposes such a connection for Chinese university patents. The
+central idea is simple. Patent relations of different kinds---shared
+classifications, textual proximity, and citations---express different
+knowledge relationships and become observable at different times. Keeping them
+separate, and dating each one, makes it possible to describe an institution by
+four process dimensions that are observable when an invention is published or
+shortly after (acquisition of external knowledge, recombination of technical
+elements, early emergence, and documented reuse), and to assess structural
+transformation independently, as a sustained change in the institution's
+technological composition across periods. The two research questions are:
+\begin{enumerate}[label=\textbf{RQ\arabic*.}]
+\item How can acquisition, recombination, emergence, and reuse be measured from
+patent relations so that each retains its own meaning and its own observation
+time?
+\item Which university knowledge profiles and trajectories does a
+university-only patent and citation corpus support, once patent volume,
+technological composition, and coverage are taken into account?
+\end{enumerate}
+
+The contribution is a traceable link between knowledge organization and
+longitudinal institutional analysis: every profile value and every trajectory
+statement can be followed back to dated patent records and the specific
+relation that supports it. The paper specifies the framework, the measures,
+and the reporting design, and states explicitly which parts a university-only
+corpus can and cannot support. Empirical values remain to be computed; no
+finding is asserted below.
+
+\section{Related work}\label{sec:related}
+Patents are selective records of knowledge production. Not all inventions are
+patented, quality varies, and legal and organizational strategies shape the
+record \citep{griliches1990,nagaoka2010}. Citations require particular care:
+examiner-added references weaken their reading as inventor learning
+\citep{alcacer2006}, and knowledge-flow estimates depend on technological
+controls and comparison groups \citep{jaffe1993,thompson2005}. Patents are
+therefore treated here as documented technical objects with dated relations,
+not as complete histories of invention.
+
+Three relation types are used in patent mapping. Classification systems
+organize technical categories \citep{leydesdorff2008}; text exposes
+similarities that shared codes miss \citep{whalen2020,kelly2021,sarica2020};
+citations record sourcing and later use. Overlay maps place organizations in a
+common knowledge space \citep{rafols2010,kay2014}, and relatedness research
+links positions in that space to entry and exit \citep{kogler2013,rigby2015}.
+Layout movement, however, can arise from a changed sample or algorithm rather
+than from changed knowledge. This study keeps visual coordinates fixed and
+measures change in the underlying distributions.
+
+The process vocabulary comes from innovation research. Absorptive capacity
+concerns the recognition and use of external knowledge \citep{cohen1990};
+exploration and exploitation \citep{march1991} and search depth and scope
+\citep{katila2002} describe learning orientations; combinatorial and
+atypical-combination studies motivate measuring unusual connections separately
+from their later impact \citep{fleming2001,uzzi2013,youn2015,verhoeven2016,wang2017}.
+Emergence is more than novelty: its attributes include growth, coherence,
+impact, and uncertainty \citep{rotolo2015}, of which scientometric methods
+operationalize a subset \citep{small2014}. First citation and later accumulation
+carry different temporal information \citep{huang2019}. Multilayer network
+research shows why heterogeneous relations should not be summed into one
+adjacency matrix \citep{kivela2014,boccaletti2014}. The present framework draws
+on these sources but makes a narrower claim: patent references index documented
+sourcing, not capability; rare code pairs index unusual combination, not
+usefulness; later citing records index bounded reuse, not learning.
+
+\section{Framework: relations, time, and transformation}\label{sec:framework}
+Technological knowledge evolution is defined here as change in the sources,
+combinations, recognized directions, and documented reuse of an institution's
+technical knowledge, together with sustained change in how that knowledge is
+organized. Patents are the observable objects; universities are the contexts in
+which they accumulate and connect. No patent or institution is assigned an
+intrinsic developmental type.
+
+Figure~\ref{fig:framework} shows the design. Four dimensions describe a
+university-period profile,
+\begin{equation}
+\mathbf{x}_{ut}=(A_{ut},R_{ut},E_{ut},D_{ut})^{\mathsf T},
+\label{eq:profile}
+\end{equation}
+where $A$ (acquisition) and $R$ (recombination) are observable when inventions
+are published, $E$ (emergence) uses the current cohort against its own
+historical reference, and $D$ (reuse) requires a fixed follow-up horizon.
+Transformation, $T_{u,t\rightarrow t+1}$, is not a fifth input. It is a
+cross-period statistic on the distribution of technical categories and pairs,
+assessed separately with its own null. Keeping $T$ outside the profile prevents
+a circular reading in which future structural change is used to describe a
+state and the state is then said to explain that change.
+\input{figures/figure1}
+
+Two temporal rules follow. First, each dimension is dated by the earliest
+observation that determines it, and no indicator uses information published
+after its own observation window. Second, a profile at one period is a state,
+not a trajectory; trajectory statements require ordered profiles for the same
+institution and evidence that observed change exceeds a within-university null.
+
+Four interpretive trajectory categories are retained as \emph{hypotheses to be
+checked against these observables}, not as classes to be imposed. A
+\emph{maintenance} trajectory shows a stable technical core (low $T$, no
+sustained coverage growth). An \emph{expansion} trajectory shows sustained
+growth in rarefied subclass coverage without unusual pairing. A
+\emph{recombination} trajectory shows repeatedly high $R$ supported by textual
+evidence of new element connections. A \emph{transformation} trajectory
+requires $T$ above its null in one transition and persistence of the new
+composition in the following period. An institution may follow different
+categories at different times, mixed cases remain visible, and the categories
+form no performance ranking.
+
+\section{Data and observable relations}\label{sec:data}
+\subsection{Corpus and its boundaries}
+The intended source is the research team's database of Chinese university
+patents with their citation records. Table~\ref{tab:data} lists the coverage
+items that must be audited before analysis. Its rows determine which relations
+in the framework are observable and are therefore part of the design rather
+than a formality.
+\input{tables/table1}
+
+The primary cohort comprises published Chinese invention applications with at
+least one university applicant at first publication, regardless of later grant
+status; utility models and designs are excluded. Institutional coverage is
+defined by a dated university roster, with historical names, mergers, and
+affiliated hospitals resolved through time-specific linkage; ambiguous matches
+remain auditable rather than silently assigned. Publication and grant versions
+of an application are collapsed. If family identifiers are available, the
+invention unit is a simple family represented by its earliest eligible
+document; otherwise it is the deduplicated application, and the unit is
+declared. A patent with $m_p$ university applicants contributes
+$\omega_{up}=1/m_p$ to each; full counts are a sensitivity.
+
+Three properties of a university-only corpus constrain the design and are
+stated here rather than discovered later. (i)~Backward references from
+university patents are observable, but the cited documents' own attributes
+are available only when the cited record is itself in the corpus or its
+classification is carried in the reference field. (ii)~Forward citations to
+university patents are observable; the citing documents' applicants are
+observable only where the citation record carries applicant fields, and the
+citing documents' \emph{own} forward links are generally not available. Reuse
+depth beyond one citation step is therefore excluded from the primary measure.
+(iii)~Chinese invention patents receive few forward citations in their first
+year, so any indicator conditioned on early recognition will be zero for most
+records. Emergence is consequently measured in an early-information form that
+does not depend on recognition, with a recognized variant as a secondary
+measure.
+
+\subsection{Observation time}
+First publication is the main clock. $W_t=[b_t,b_{t+1})$ is a non-overlapping
+three-year cohort and $B_t=[b_t-3,b_t)$ its historical reference; reuse uses a
+horizon of $H=5$ years. Mature profiles require $b_{t+1}+H\leq d_{\mathrm{extract}}$,
+and cohorts without a full historical reference are excluded. The number of
+mature cohorts this leaves is a property of the database, to be reported in
+Table~\ref{tab:data}; if fewer than three consecutive mature cohorts exist,
+trajectory analysis is restricted to description and the transformation test
+is reported as infeasible rather than approximated.
+
+A university-period enters profile analysis with at least 20 attributed
+inventions and at least 80\% usable attributed mass for the fields each
+dimension requires. Confirmed absence of citations is zero; an unavailable
+field is missing and never enters a denominator. For dimension $j$ the eligible
+subset is $P^j_{ut}$ with mass $M^j_{ut}=\sum_{p\in P^j_{ut}}\omega_{up}$,
+reported as a share of total mass.
+
+\subsection{Three relation layers}
+Figure~\ref{fig:pipeline} shows how the corpus is decomposed. The technology
+layer has IPC main-group nodes linked by fractional co-occurrence,
+\begin{equation}
+w_{ij}^{(t)}=\sum_{p\in W_t:\,m_p^C\geq2}
+\frac{\ind\{i,j\in\mathcal{C}_p\}}{\binom{m_p^C}{2}},\quad i<j,
+\label{eq:cooc}
+\end{equation}
+where $\mathcal{C}_p$ is the set of distinct main groups on patent $p$; each
+multi-coded invention contributes one unit of pair mass. The semantic layer
+has patent nodes linked by cosine similarity of character 2--4-gram TF--IDF
+vectors of normalized titles and abstracts, with vocabulary and IDF fitted on
+$B_t$ only (features in at least five and at most 80\% of reference documents,
+capped at 100{,}000; log TF, smoothed IDF, $L_2$ normalization). The citation
+layer has patent nodes with directed edges from cited to citing document,
+duplicate family pairs collapsed, within-family links removed, and citing
+publication required to be strictly later. Applicant-overlap self-citations are
+excluded from the primary reuse graph. A patent--IPC incidence relation
+connects the layers; their adjacency matrices are never summed. Display graphs
+(normalized edges, top-10 neighbor union; mutual 15-nearest-neighbor semantic
+graph; Leiden communities, \citealp{traag2019}) use fixed coordinates across
+periods; all indicators use unpruned weights.
+\input{figures/figure2}
+
+\section{Measures}\label{sec:measures}
+\subsection{Acquisition}
+Let $q_{ut}$ be the attributed share of valid inventions with at least one
+resolved external backward reference, and let $\pi_{ut,k}$ be the fractional
+distribution of those references over a fixed, version-harmonized IPC subclass
+vocabulary of size $K_t$. Then
+\begin{equation}
+A_{ut}=q_{ut}\left[\tfrac12+\tfrac12\,
+\frac{-\sum_k\pi_{ut,k}\log\pi_{ut,k}}{\log K_t}\right],
+\label{eq:acquisition}
+\end{equation}
+so that confirmed absence of external sourcing gives $A=0$ and the positive
+baseline distinguishes narrow sourcing from none. Both components are
+reported. $A$ measures documented source reach and diversity
+\citep{shannon1948,stirling2007}, not absorptive capacity \citep{cohen1990}.
+
+\subsection{Recombination}
+Let $c^-_{ij,t}$ be the historical fractional pair mass of main groups
+$(i,j)$ in $B_t$, $Q_t$ the number of possible pairs in the pre-established
+vocabulary, and $C_t=\sum_{i<j}c^-_{ij,t}>0$. With $\alpha=1/2$,
+\begin{align}
+p^-_{ij,t}&=\frac{c^-_{ij,t}+\alpha}{C_t+\alpha Q_t},&
+r_{ij,t}&=\frac{-\log p^-_{ij,t}}{-\log\{\alpha/(C_t+\alpha Q_t)\}},\\
+R_{ut}&=\frac{1}{M^R_{ut}}\sum_{p\in P^R_{ut}}\omega_{up}\,
+\frac{\sum_{(i,j)\in\mathcal{L}_p}r_{ij,t}}{|\mathcal{L}_p|},
+\label{eq:recombination}
+\end{align}
+where $\mathcal{L}_p$ is the set of valid mapped pairs on patent $p$.
+Unresolved codes map to one recorded out-of-vocabulary category; a patent with
+no valid pair is missing, not zero. Rarity indexes unusual combination, not
+novelty or usefulness \citep{fleming2001,youn2015,verhoeven2016}. First-seen
+pair rates and degree-preserving permutations of the patent--IPC incidence
+provide complementary checks.
+
+\subsection{Emergence}
+Semantic novelty is $n_{p,t}=1-\max_{q\in B_t}s_{pq}$ over the full historical
+index, excluding same-family comparators. For subclass $k$, with fractional
+shares $\rho_{k,t}$ in the current cohort and $\rho^-_{k,t}$ in the reference,
+\begin{equation}
+g_{k,t}=\max\!\left\{0,\frac{\rho_{k,t}-\rho^-_{k,t}}
+{\rho_{k,t}+\rho^-_{k,t}+10^{-12}}\right\},\qquad
+E_{ut}=\frac{1}{M^E_{ut}}\sum_{p\in P^E_{ut}}\omega_{up}\,n_{p,t}\,g_{p,t},
+\label{eq:emergence}
+\end{equation}
+where $g_{p,t}$ averages over the patent's subclasses. $E$ is thus a mean of
+patent-level novelty--growth products: novelty and field growth must coincide
+in the same invention. It is an early-information measure available at
+publication. A recognized variant $E^{\mathrm{rec}}$ multiplies each product by
+an indicator of external citation within one year; given constraint~(iii) in
+Section~\ref{sec:data}, it is reported with its nonzero share as a secondary
+measure and is not the primary emergence indicator. Neither variant covers the
+full emergence construct \citep{rotolo2015,small2014}; technical coherence is
+assessed through cases.
+
+\subsection{Reuse}
+Within $(\tau_p,\tau_p+H]$, let $b_p$ count distinct external citing
+organizations where applicant fields are available and distinct external
+citing families otherwise (the level is recorded), and let
+$v_p=1-\Delta_p/H$ when the first external citation arrives after $\Delta_p$
+years, with $v_p=0$ for uncited patents. Each component is transformed to its
+midrank among positive values in the same primary subclass and cohort
+($\phi(0)=0$; back-off to IPC section and then cohort below 30 positives), and
+\begin{equation}
+D_{ut}=\frac{1}{2M^D_{ut}}\sum_{p\in P^D_{ut}}\omega_{up}
+\left[\phi^b(b_p)+\phi^v(v_p)\right].
+\label{eq:diffusion}
+\end{equation}
+$D$ measures \emph{documented reuse among observed citers}. Because the
+citing side of a university-only corpus is incomplete, $D$ does not measure
+economy-wide diffusion, and a two-step depth component is not part of the
+primary measure; it is computed as a sensitivity only where descendants'
+forward links exist. First uptake and accumulated breadth carry different
+information \citep{huang2019} and are also reported separately.
+
+\subsection{Transformation}
+Let $\mathbf{a}_{ut}$ and $\mathbf{r}_{ut}$ be the university's normalized
+subclass and pair distributions on shared vocabularies. Then
+\begin{equation}
+T_{u,t\rightarrow t+1}=\frac{
+\JSD(\mathbf{a}_{ut},\mathbf{a}_{u,t+1})+
+\JSD(\mathbf{r}_{ut},\mathbf{r}_{u,t+1})}{2\log2}\in[0,1],
+\label{eq:transformation}
+\end{equation}
+with $\JSD$ the Jensen--Shannon divergence \citep{lin1991}. A transformation
+event requires $T$ above the 95th percentile of a within-university null that
+pools the two adjacent cohorts and permutes their period labels while
+preserving cohort sizes, confirmed under size-matched subsampling. A
+\emph{sustained} event additionally requires the third period to be closer to
+the new composition than to the old and still distinguishable from the old.
+Mergers and IPC revision events are audited before any event is retained.
+$T$ measures institutional reorganization of a portfolio, not a technological
+paradigm shift \citep{dosi1982,funk2017}; diversity is a distinct property
+\citep{stirling2007,porter2009}.
+
+\section{Analysis and reporting design}\label{sec:analysis}
+The analysis proceeds in three steps, each answerable from the corpus described
+above.
+
+\emph{Landscape.} The technology layer is laid out once on the pooled corpus
+(Figure~\ref{fig:map}A); period overlays reuse the same coordinates
+(Figure~\ref{fig:map}B) so that entry, persistence, and exit of technical
+groups reflect the data rather than the layout. Coverage growth is evaluated
+against rarefied subclass coverage and portfolio size, since a larger sample
+alone makes more fields visible. Disagreement between the semantic and
+classification views marks cases for inspection.
+
+\emph{Profiles.} Distributions, zero shares, and denominators of $A,R,E,D$ are
+reported for eligible university-periods (Table~\ref{tab:descriptive}), together
+with pairwise correlations and their association with log patent volume, field
+composition, and period. Residual variation after these adjustments is the
+evidence that relational profiles add information beyond size and field.
+Profiles are then displayed on their original scales with whole-university
+bootstrap intervals \citep{efron1979}, and universities are placed in profile
+space (Figure~\ref{fig:states}A). Model-based grouping of profiles (e.g., a
+Gaussian mixture with stability checks, \citealp{fraley2002,hennig2007}) is a
+possible extension once the number of mature university-periods is known; it
+is not required for the questions posed here and is not asserted in advance.
+
+\emph{Trajectories.} For universities with consecutive eligible cohorts,
+ordered profiles are displayed alongside $T$ and its null
+(Figure~\ref{fig:states}B). The four trajectory categories of
+Section~\ref{sec:framework} are checked against their stated observable
+criteria; the counts of supported, mixed, and unsupported cases are reported.
+The proposition that sustained recombination precedes transformation is tested
+by comparing the observed frequency of ``high-$R$ followed by sustained $T$
+event'' with its frequency under within-university order permutations that
+preserve each university's profile values. A nonpositive or unstable contrast
+leaves the proposition unsupported.
+
+\emph{Cases and sensitivity.} Twelve trajectories sampled across profile
+regions and size strata are assessed by two technically qualified raters from
+dated patent evidence without model values; agreement, disagreements, and
+adjudication are reported \citep{cohen1960}. Sensitivity covers invention
+unit, attribution, text representation (TF--IDF versus a frozen
+Chinese-capable encoder, \citealp{reimers2019}), window length, citation
+horizon and self-citation scope, eligibility thresholds, and the $E$ and $D$
+variants (Table~\ref{tab:robustness}). Common-sample agreement is reported
+separately from sample retention. All secondary associations are exploratory.
+
+\section{Results}\label{sec:results}
+\emph{Evidence status.} Values are not yet computed; the paragraphs below fix
+what will be reported and contain no observed finding.
+
+\subsection{Coverage and landscape}
+The analytic population comprises \pending{universities}, \pending{unique
+inventions}, and \pending{university-periods} in \pending{mature cohorts}.
+Table~\ref{tab:data} separates raw retrieval, deduplication, and eligibility,
+with the leading exclusion reasons \pending{reasons and counts}. Of the citation
+layer, \pending{share} of forward links carry citing applicant fields, which
+fixes the level at which $b_p$ is computed. Figure~\ref{fig:map} reports
+\pending{node, edge, and community counts} and the retained mass; entry,
+persistence, and exit of technical groups are \pending{observed patterns}.
+\input{figures/figure3}
+
+\subsection{Profiles}
+Table~\ref{tab:descriptive} reports each dimension's distribution and zero
+share. Correlations among $A,R,E,D$ are \pending{coefficients and intervals},
+and the share of variance remaining after adjustment for volume, field, and
+period is \pending{estimate}. Figure~\ref{fig:states}A shows where universities
+fall in profile space and which regions are populated; $E^{\mathrm{rec}}$ is
+nonzero for \pending{share} of university-periods.
+\input{tables/table2}
+
+\subsection{Trajectories and transformation}
+Among \pending{count} universities with consecutive eligible cohorts,
+\pending{count} show at least one $T$ event above its null and \pending{count}
+show a sustained event; \pending{count} events are removed by the merger and
+IPC-revision audit. Trajectory categories supported by their observable
+criteria number \pending{counts by category, mixed, unsupported}. The contrast
+between observed and permuted ``recombination then transformation'' sequences
+is \pending{effect and interval}. Figure~\ref{fig:states}B displays sampled
+ordered profiles with their $T$ values.
+\input{figures/figure4}
+
+\subsection{Cases and sensitivity}
+Rater agreement on \pending{count} cases is \pending{agreement and kappa};
+principal disagreements concern \pending{themes}. Table~\ref{tab:robustness}
+reports the settings that change profile values or trajectory counts most;
+dependence on a single representation, on sparse citations, or on one
+eligibility threshold bounds the interpretation.
+\input{tables/table5}
+\FloatBarrier
+
+\section{Discussion}\label{sec:discussion}
+The framework's contribution to information science is representational.
+Each inference is tied to the relation that supports it: an unusual IPC pair
+supports a combination claim; semantic distance from a dated reference corpus
+supports a relative novelty claim; a later external citing record supports a
+bounded reuse claim; divergence between successive category distributions,
+against a within-university null, supports a reorganization claim. Retaining
+these origins makes agreement and disagreement among representations visible
+and connects patent mapping \citep{kay2014,leydesdorff2014,yan2017} to
+longitudinal institutional analysis without collapsing the relations into one
+score.
+
+The design also states what a university-only corpus can support. It can
+describe sourcing, combination, early emergence, and reuse among observed
+citers, and it can test whether a portfolio's composition changed more than
+its own year-to-year variation. It cannot establish economy-wide diffusion,
+reuse chains beyond one step, or the causes of change. If recurring profiles or
+ordered sequences do not exceed their nulls, the framework remains a
+descriptive organization of evidence rather than an account of developmental
+mechanisms, and that outcome is reported as such.
+
+Other limits persist. Patents omit scientific, tacit, and unpatented knowledge.
+Citations do not observe learning or contractual transfer \citep{alcacer2006}.
+Novelty is relative to a corpus and a representation. Institutional events
+such as mergers, recruitment, and policy affect both profiles and later change.
+Profiles should therefore be read with their coverage and uncertainty,
+consistent with responsible use of research metrics \citep{hicks2015}, and not
+as a ranking.
+
+\section{Conclusion}\label{sec:conclusion}
+This paper connects the contents of patent records, their dated relations, and
+the time at which each relation becomes observable into a framework for
+describing how university knowledge structures change. Four process dimensions
+are measured from separate relation layers; transformation is assessed
+independently as sustained compositional change. The framework is specified
+against the actual boundaries of a university-only patent and citation corpus,
+so that its empirical claims---when computed---are limited to what the data
+observe. Extensions with enterprise citing records would allow reuse to be
+traced beyond the academic system, and publication--patent links would separate
+scientific from technological sourcing.
+
+\section*{Data and code availability}
+The source database and computed outputs were not available for this revision;
+database permissions and any deposit must be verified by the authors. The
+accompanying LaTeX package contains the manuscript and display sources only.
+Provenance, output fields, and audit requirements follow traceable data
+stewardship principles \citep{wilkinson2016}.

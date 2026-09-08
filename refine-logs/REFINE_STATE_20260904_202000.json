@@ -1,0 +1,9 @@
+{
+  "phase": "data_intake",
+  "round": 0,
+  "agent_id": null,
+  "last_score": null,
+  "last_verdict": "REVISE_BEFORE_EMPIRICAL_CLAIMS",
+  "status": "in_progress",
+  "timestamp": "2026-09-04T20:20:00+08:00"
+}

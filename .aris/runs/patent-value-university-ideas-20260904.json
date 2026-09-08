@@ -1,0 +1,87 @@
+{
+  "run_id": "patent-value-university-ideas-20260904",
+  "executor_model": "codex-gpt-5.6-sol",
+  "executor_family": "openai",
+  "policy": {
+    "provisional_advances": true
+  },
+  "created": "2026-09-04T12:14:54Z",
+  "updated": "2026-09-04T13:13:28Z",
+  "gates": {
+    "idea-discovery-evidence": {
+      "verdict": "BLOCKED",
+      "reasons": [
+        "novelty-check review evidence missing (status=done)",
+        "research-review review evidence missing (status=done)"
+      ],
+      "updated": "2026-09-04T12:22:11Z"
+    }
+  },
+  "phases": [
+    {
+      "phase": "research-lit",
+      "status": "accepted",
+      "artifact": "idea-stage/IDEA_REPORT.md#literature-landscape",
+      "verdict_id": "file:idea-stage/IDEA_REPORT.md#literature-landscape",
+      "reviewer": "deterministic:file-present",
+      "reviewer_family": "deterministic",
+      "review_independence": "deterministic",
+      "acceptance_status": "accepted",
+      "executor_model": "codex-gpt-5.6-sol",
+      "executor_family": "openai",
+      "updated": "2026-09-04T12:21:39Z"
+    },
+    {
+      "phase": "idea-creator",
+      "status": "accepted",
+      "artifact": "idea-stage/IDEA_REPORT.md#ranked-ideas",
+      "verdict_id": "file:idea-stage/IDEA_REPORT.md#ranked-ideas",
+      "reviewer": "deterministic:file-present",
+      "reviewer_family": "deterministic",
+      "review_independence": "deterministic",
+      "acceptance_status": "accepted",
+      "executor_model": "codex-gpt-5.6-sol",
+      "executor_family": "openai",
+      "updated": "2026-09-04T12:21:39Z"
+    },
+    {
+      "phase": "novelty-check",
+      "status": "accepted",
+      "artifact": "idea-stage/IDEA_REPORT.md#novelty-verification",
+      "verdict_id": "file:idea-stage/INDEPENDENT_REVIEWS.md#novelty-check",
+      "reviewer": "claude-context-independent-agent",
+      "reviewer_family": "anthropic",
+      "review_independence": "cross-family",
+      "acceptance_status": "accepted",
+      "executor_model": "codex-gpt-5.6-sol",
+      "executor_family": "openai",
+      "updated": "2026-09-04T13:13:28Z"
+    },
+    {
+      "phase": "research-review",
+      "status": "accepted",
+      "artifact": "idea-stage/IDEA_REPORT.md#external-critical-review",
+      "verdict_id": "file:idea-stage/INDEPENDENT_REVIEWS.md#research-review",
+      "reviewer": "claude-context-independent-agent",
+      "reviewer_family": "anthropic",
+      "review_independence": "cross-family",
+      "acceptance_status": "accepted",
+      "executor_model": "codex-gpt-5.6-sol",
+      "executor_family": "openai",
+      "updated": "2026-09-04T13:13:28Z"
+    },
+    {
+      "phase": "research-refine-pipeline",
+      "status": "accepted",
+      "artifact": "refine-logs/FINAL_PROPOSAL.md",
+      "verdict_id": "file:refine-logs/FINAL_PROPOSAL.md",
+      "reviewer": "deterministic:file-present",
+      "reviewer_family": "deterministic",
+      "review_independence": "deterministic",
+      "acceptance_status": "accepted",
+      "executor_model": "codex-gpt-5.6-sol",
+      "executor_family": "openai",
+      "updated": "2026-09-04T12:21:39Z"
+    }
+  ]
+}

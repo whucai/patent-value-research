@@ -1,0 +1,19 @@
+\begin{figure}[tbp]\centering
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,text width=12.3cm] (source) at (0,0) {\textbf{University-only patent and citation corpus}\\Dated university roster; deduplicated invention units; coverage audit (Table~\ref{tab:data})};
+\node[box,text width=3.25cm,minimum height=2.3cm] (ipc) at (-4.5,-3.0) {\textbf{Technology layer}\\IPC main-group pairs\\Fixed layout; $B_t$ reference};
+\node[box,text width=3.25cm,minimum height=2.3cm] (sem) at (0,-3.0) {\textbf{Semantic layer}\\Title--abstract TF--IDF\\Novelty against $B_t$};
+\node[box,text width=3.25cm,minimum height=2.3cm] (cit) at (4.5,-3.0) {\textbf{Citation layer}\\Backward: sourcing\\Forward: one-step reuse};
+\foreach \n in {ipc,sem,cit}{\draw[arr] (source.south)--++(0,-.35)-|(\n.north);}
+\node[box,text width=12.3cm] (prof) at (0,-5.9) {\textbf{University-period profiles} $A$, $R$, $E$, $D$ \quad and \quad \textbf{cross-period} $T$\\Denominators, coverage shares, and observation horizons retained};
+\foreach \n in {ipc,sem,cit}{\draw[arr] (\n.south)--++(0,-.35)-|(prof.north);}
+\node[box,text width=3.8cm,minimum height=2.2cm] (land) at (-4.3,-8.9) {\textbf{Landscape}\\Fixed-layout map;\\period overlays};
+\node[box,text width=3.8cm,minimum height=2.2cm] (dist) at (0,-8.9) {\textbf{Profiles}\\Distributions; size and field adjustment};
+\node[box,text width=3.8cm,minimum height=2.2cm] (traj) at (4.3,-8.9) {\textbf{Trajectories}\\Ordered profiles; $T$ events vs.\ null; sequence tests};
+\foreach \n in {land,dist,traj}{\draw[arr] (prof.south)--++(0,-.35)-|(\n.north);}
+\node[box,text width=12.3cm] (valid) at (0,-11.6) {\textbf{Cases and sensitivity}\\Blinded case reading; representation, unit, window, and threshold sensitivity};
+\foreach \n in {land,dist,traj}{\draw[arr] (\n.south)--++(0,-.3)-|(valid.north);}
+\end{tikzpicture}
+\caption{Data-to-inference workflow. Three relation layers are kept separate up to the profile; transformation is computed across periods from the technology layer alone.}
+\label{fig:pipeline}
+\end{figure}

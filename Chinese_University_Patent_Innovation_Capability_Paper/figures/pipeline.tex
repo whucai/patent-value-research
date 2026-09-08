@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}[node distance=1cm]
+\node[draw,rounded corners] (a){University Patent Dataset};
+\node[draw,rounded corners,right=of a](b){Indicator Extraction};
+\node[draw,rounded corners,right=of b](c){Capability Measurement};
+\node[draw,rounded corners,right=of c](d){Pattern Identification};
+\node[draw,rounded corners,right=of d](e){Policy Implications};
+
+\draw[->](a)--(b);
+\draw[->](b)--(c);
+\draw[->](c)--(d);
+\draw[->](d)--(e);
+\end{tikzpicture}
