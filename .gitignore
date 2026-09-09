@@ -16,6 +16,7 @@
 *.nav
 *.snm
 *.vrb
+*.xdv
 *-SAVE-ERROR
 
 # OS / editor
@@ -28,6 +29,10 @@ Thumbs.db
 
 # Tool runtime / locks
 *.lock
+
+# Python bytecode
+__pycache__/
+*.pyc
 
 # Claude local settings / runtime temp (per-user)
 .claude/
