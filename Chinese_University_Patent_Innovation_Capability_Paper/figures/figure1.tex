@@ -8,23 +8,23 @@
 \node[note,gray] at (4.6,2.05) {follow-up $(\tau_p,\tau_p+H]$};
 \draw[gray,dashed] (-2.3,1.5)--(-2.3,-4.0);
 \draw[gray,dashed] (2.3,1.5)--(2.3,-4.0);
-% four dimensions, placed by the time at which they become observable
-\node[box,text width=3.6cm] (a) at (-4.6,0) {\textbf{Acquisition} $A$\\External backward references: reach and diversity};
+% four concurrent dimensions, placed by the time at which they become observable
+\node[box,text width=3.6cm] (a) at (-4.6,0) {\textbf{Knowledge Sourcing} $A$\\External backward references: reach and diversity};
 \node[box,text width=3.6cm] (r) at (0,0) {\textbf{Recombination} $R$\\Rarity of IPC pairs against $B_t$};
-\node[box,text width=3.6cm] (e) at (0,-2.5) {\textbf{Emergence} $E$\\Semantic novelty $\times$ field growth against $B_t$};
-\node[box,text width=3.6cm] (d) at (4.6,0) {\textbf{Reuse} $D$\\External citing breadth and first-uptake velocity};
+\node[box,text width=3.6cm] (e) at (0,-2.5) {\textbf{Technological Exploration} $E$\\Semantic novelty $\times$ field growth against $B_t$};
+\node[box,text width=3.6cm] (d) at (4.6,0) {\textbf{Knowledge Diffusion} $D$\\External citing breadth and first-uptake velocity};
 \node[note] at (-4.6,-1.35) {relation: citation (backward)};
 \node[note] at (4.6,-1.35) {relation: citation (forward)};
 \node[note] at (0,-3.75) {relation: classification and text};
 % profile
-\node[box,text width=12.6cm,fill=gray!8] (prof) at (0,-5.3) {\textbf{University-period profile} $\mathbf{x}_{ut}=(A,R,E,D)$\\Each dimension dated by its own observation window; relation layers never summed};
+\node[box,text width=12.6cm,fill=gray!8] (prof) at (0,-5.3) {\textbf{University-period profile} $\mathbf{x}_{ut}=(A,R,E,D)$\\Four concurrent dimensions, each dated by its own observation window; relation layers never summed};
 \draw[arr] (a.south)--(a.south |- prof.north);
 \draw[arr] (e.south)--(e.south |- prof.north);
 \draw[arr] (d.south)--(d.south |- prof.north);
-% transformation across periods
-\node[box,text width=12.6cm] (t) at (0,-7.7) {\textbf{Transformation} $T_{u,t\rightarrow t+1}$ (cross-period, outside the profile)\\Divergence of subclass and pair distributions between $W_t$ and $W_{t+1}$ against a within-university null; sustained if $W_{t+2}$ stays closer to the new composition};
+% dynamic transformation across periods (the fifth dimension)
+\node[box,text width=12.6cm] (t) at (0,-7.7) {\textbf{Dynamic Transformation} $T_{u,t\rightarrow t+1}$ (cross-period, the fifth dimension)\\Divergence of subclass and pair distributions between $W_t$ and $W_{t+1}$ against a within-university null; sustained if $W_{t+2}$ stays closer to the new composition};
 \draw[arr,dashed] (prof.south)--(t.north);
 \end{tikzpicture}
-\caption{Framework. Four process dimensions are placed at the time they become observable and are drawn from distinct patent relations; transformation is a separate cross-period statistic, not a fifth input. No arrow denotes a causal effect or a compulsory stage.}
+\caption{Framework. Four concurrent dimensions are placed at the time they become observable and are drawn from distinct patent relations; dynamic transformation is a separate cross-period statistic---the fifth dimension---kept outside the concurrent profile to avoid circularity. No arrow denotes a causal effect or a compulsory stage.}
 \label{fig:framework}
 \end{figure}
