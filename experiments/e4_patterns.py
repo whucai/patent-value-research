@@ -42,8 +42,13 @@ def assign_apriori(profiles_df, T_df):
 
 def gmm_crosscheck(profiles_df, max_k=8, n_boot=100):
     """(b) GaussianMixture on (A,R,E,D); select K by BIC + cluster-wise
-    stability (resample, refit, adjusted Rand of assignments). Report means,
-    max posterior, and ARI vs the a-priori assignment -> Table 3."""
+    stability (resample, refit, adjusted Rand of assignments). GMM classifies
+    PERIOD-level profiles (states), while the a-priori patterns are
+    TRAJECTORY-level (multi-period). So: first derive a trajectory label per
+    UNIVERSITY from its GMM-state sequence under prespecified rules, THEN
+    compute ARI against the a-priori assignment on the common unit
+    (universities) -> Table 3. Assess GMM adequacy for bounded/zero-inflated
+    vars, skewed masses, repeated obs from same university."""
     raise NotImplementedError
 
 

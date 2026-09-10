@@ -37,7 +37,12 @@ from experiments import utils
 
 def transformation_null(dist_t, dist_t1, n_perm=1000, seed=0):
     """(a) Pool adjacent cohorts, permute period labels preserving sizes; 95th
-    pct of permuted T is the threshold. Confirm with size-matched subsampling."""
+    pct of permuted T is the threshold. NB: this tests PERIOD-LABEL
+    EXCHANGEABILITY conditional on the pooled portfolio + cohort sizes, NOT the
+    magnitude of year-to-year variation under a temporally structured process.
+    Validity depends on no secular trends/coverage change/field-wide transitions
+    in the window. Confirm with size-matched subsampling. Report the two JSD
+    terms (subclass, pair) separately as well as summed."""
     raise NotImplementedError
 
 

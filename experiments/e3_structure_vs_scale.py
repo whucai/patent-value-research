@@ -40,19 +40,26 @@ from experiments import utils
 
 
 def within_stratum_dispersion(profiles_df, n_boot=2000):
-    """(a) Volume-quartile strata; test profile dispersion != 0 by bootstrap."""
+    """(a) Volume-quartile strata; compare within-stratum profile heterogeneity
+    against a MEASUREMENT-NOISE null estimated from the within-university
+    bootstrap of each profile (NOT against zero — sampling/measurement error
+    alone yields positive dispersion). Returns heterogeneity vs noise-null p."""
     raise NotImplementedError
 
 
 def residual_variance(profiles_df):
-    """(b) R^2 and residual share after log-volume/field/period regression."""
+    """(b) R^2 and residual share after log-volume/field/period regression.
+    Reported as DESCRIPTIVE evidence of variation not explained by scale/field,
+    not as validation of the measures."""
     raise NotImplementedError
 
 
 def traditional_comparison(profiles_df, trad_df):
-    """(c)+(d) partial correlations with count/grant/cite/incoPat + Kendall tau
-    between traditional and capability rankings. Low partial corr + divergent
-    rankings => output indicators do not fully reveal the capability."""
+    """(c)+(d) partial correlations with count/grant/cite/incoPat (after volume
+    control) + Kendall tau between two university rank orderings. Ranking uses a
+    prespecified scalar composite (1st PC of standardized profile) reported with
+    uncertainty. Results are DESCRIPTIVE evidence the two families differ, not
+    proof one is more valid."""
     raise NotImplementedError
 
 

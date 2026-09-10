@@ -52,7 +52,8 @@ each retains its own meaning and its own observation time?
 \item Which capability profiles and development patterns does a corpus of 124
 Chinese Double-First-Class university invention patents (1990--2019) support,
 once patent volume, technological composition, and coverage are taken into
-account, and what formation mechanisms do they reveal?
+account, and what structural differences and temporal associations they
+reveal?
 \end{enumerate}
 
 The contribution is a traceable link between knowledge organization and
@@ -138,10 +139,16 @@ state is then said to explain that change; the five dimensions together still
 characterize the capability, four synchronously and one longitudinally.
 \input{figures/figure1}
 
-Two temporal rules follow. First, each dimension is dated by the earliest
-observation that determines it, and no indicator uses information published
-after its own observation window. Second, a profile at one period is a state,
-not a trajectory; trajectory statements require ordered profiles for the same
+Two temporal rules follow. First, each statistic is dated by the latest
+information required to determine it, not by the earliest observable signal:
+$A$ and $R$ are available when an invention is published, $E$ becomes
+available only when its cohort closes (it uses the cohort's subclass-growth
+shares), and $D$ requires a fixed five-year follow-up so that its
+cohort-relative ranks can mature. The profile $\mathbf{x}_{ut}$ is therefore a
+retrospective portrait of a closed cohort, not a contemporaneously observable
+state at the cohort date, and no indicator uses information published after its
+own observation window. Second, a profile at one period is a state, not a
+trajectory; trajectory statements require ordered profiles for the same
 institution and evidence that observed change exceeds a within-university null.
 
 Three interpretive development patterns are retained as \emph{hypotheses to be
@@ -251,7 +258,12 @@ so that confirmed absence of external sourcing gives $A=0$ and the positive
 baseline distinguishes narrow sourcing from none. Both components are
 reported. $A$ measures the reach and diversity of documented knowledge
 sourcing \citep{shannon1948,stirling2007}, not absorptive capacity
-\citep{cohen1990}.
+\citep{cohen1990}. The $\tfrac12$ positive baseline is a reporting convention
+that keeps the no-sourcing and narrow-sourcing cases separable rather than a
+substantive equivalence between them; both components ($q_{ut}$ and the
+diversity term) are reported so the weighting is auditable. When $K_t\leq1$ or
+no classifiable external reference exists, the diversity term is undefined and
+the period is treated as missing rather than zero.
 
 \subsection{Recombination}
 Let $c^-_{ij,t}$ be the historical fractional pair mass of main groups
@@ -267,9 +279,12 @@ R_{ut}&=\frac{1}{M^R_{ut}}\sum_{p\in P^R_{ut}}\omega_{up}\,
 where $\mathcal{L}_p$ is the set of valid mapped pairs on patent $p$.
 Unresolved codes map to one recorded out-of-vocabulary category; a patent with
 no valid pair is missing, not zero. Rarity indexes unusual combination, not
-novelty or usefulness \citep{fleming2001,youn2015,verhoeven2016}. First-seen
-pair rates and degree-preserving permutations of the patent--IPC incidence
-provide complementary checks.
+novelty or usefulness \citep{fleming2001,youn2015,verhoeven2016}. Because a pair can be rare merely because its components are individually
+uncommon, $R$ is interpreted conditional on a degree-preserving permutation
+null that holds marginal code frequencies; the observed-minus-permuted rarity
+is reported alongside $R$, and the share of single-coded patents (necessarily
+excluded from pairing) is reported as a coverage indicator. First-seen pair
+rates provide an additional check.
 
 \subsection{Technological exploration}
 Semantic novelty is $n_{p,t}=1-\max_{q\in B_t}s_{pq}$ over the full historical
@@ -281,17 +296,24 @@ g_{k,t}=\max\!\left\{0,\frac{\rho_{k,t}-\rho^-_{k,t}}
 E_{ut}=\frac{1}{M^E_{ut}}\sum_{p\in P^E_{ut}}\omega_{up}\,n_{p,t}\,g_{p,t},
 \label{eq:emergence}
 \end{equation}
-where $g_{p,t}$ averages over the patent's subclasses. $E$ is thus a mean of
-patent-level novelty--growth products: novelty and field growth must coincide
-in the same invention, capturing the extent to which the university explores
-novel technological directions relative to its own past. It is an
-early-information measure available at publication. A recognized variant
-$E^{\mathrm{rec}}$ multiplies each product by an indicator of external citation
-within one year; given constraint~(iii) in Section~\ref{sec:data}, it is
-reported with its nonzero share as a secondary measure and is not the primary
-exploration indicator. Neither variant covers the full construct of
-technological emergence \citep{rotolo2015,small2014}; technical coherence is
-assessed through cases.
+where $g_{p,t}$ averages over the patent's subclasses. Both $n_{p,t}$ and
+$g_{k,t}$ are computed against the corpus-wide historical index $B_t$ and
+current cohort $W_t$ (field-level signals), not against a university's own
+past; ``technological exploration'' is therefore read as the university
+producing work that is novel relative to the field's history \emph{and} located
+in growing subclasses, not as institutional unfamiliarity per se. Because
+$g_{p,t}$ uses the current cohort's subclass shares, $E$ becomes available
+only when the cohort closes; it is early-information in that it needs no
+citation or recognition, but it is retrospective at the cohort level rather
+than observable at a single patent's publication. The novelty--growth product
+also weights exploration toward expanding directions, so novelty in stable or
+declining subclasses receives no growth credit; the recognized variant and
+case reading compensate. A recognized variant $E^{\mathrm{rec}}$ multiplies
+each product by an indicator of external citation within one year; given
+constraint~(iii) in Section~\ref{sec:data}, it is reported with its nonzero
+share as a secondary measure and is not the primary exploration indicator.
+Neither variant covers the full construct of technological emergence
+\citep{rotolo2015,small2014}; technical coherence is assessed through cases.
 
 \subsection{Knowledge diffusion}
 Within $(\tau_p,\tau_p+H]$, let $b_p$ count distinct external citing
@@ -307,7 +329,11 @@ D_{ut}=\frac{1}{2M^D_{ut}}\sum_{p\in P^D_{ut}}\omega_{up}
 \label{eq:diffusion}
 \end{equation}
 $D$ measures \emph{documented knowledge diffusion among observed citers}.
-Because the citing side of a university-only corpus is incomplete, $D$ does not
+Midranks are rescaled to $[0,1]$ so the two components share a common scale;
+where applicant fields are missing, externality cannot be established and such
+records are flagged and excluded from $b_p$ rather than silently classified as
+external or treated as confirmed zeros. Because the citing side of a
+university-only corpus is incomplete, $D$ does not
 measure economy-wide diffusion, and a two-step depth component is not part of
 the primary measure; it is computed as a sensitivity only where descendants'
 forward links exist. First uptake and accumulated breadth carry different
@@ -328,9 +354,19 @@ pools the two adjacent cohorts and permutes their period labels while
 preserving cohort sizes, confirmed under size-matched subsampling. A
 \emph{sustained} event additionally requires the third period to be closer to
 the new composition than to the old and still distinguishable from the old.
-Mergers and IPC revision events are audited before any event is retained.
-$T$ measures institutional reorganization of a portfolio, not a technological
-paradigm shift \citep{dosi1982,funk2017}; diversity is a distinct property
+Mergers and IPC revision events are audited before any event is retained. The
+null exchanges patents between the two adjacent periods conditional on the
+pooled portfolio and cohort sizes; it therefore tests period-label
+exchangeability, not the magnitude of year-to-year variation under a
+temporally structured process, and its validity depends on the absence of
+secular trends, coverage change, or field-wide transitions during the window.
+Because pair changes partly follow subclass-composition changes, the two JSD
+terms are reported separately as well as summed, so the incremental
+contribution of the pair term is visible; multiple university-transition tests
+are controlled at the family-wise level. $T$ measures institutional
+reorganization of a portfolio, not a technological paradigm shift
+\citep{dosi1982,funk2017}; a large $T$ may reflect disruption or contraction as
+readily as adaptive change, and diversity is a distinct property
 \citep{stirling2007,porter2009}.
 
 \section{Analysis and reporting design}\label{sec:analysis}
@@ -357,33 +393,53 @@ space (Figure~\ref{fig:states}A).
 \emph{Patterns.} Development patterns are identified in two ways and then
 compared. First, the three a-priori patterns of Section~\ref{sec:framework}
 (steady utilization, exploratory innovation, structural recombination) are
-applied through their stated observable criteria, and the counts of supported,
-mixed, and unsupported cases are reported. Second, a Gaussian mixture on the
-concurrent profile $(A,R,E,D)$, with the number of components selected by BIC
-and cluster-wise stability \citep{fraley2002,hennig2007}, provides a
-data-driven grouping that is cross-checked against the a-priori patterns by
-adjusted Rand index (Table~\ref{tab:gmm}). For universities with consecutive
-eligible cohorts, a first-order Markov transition matrix among patterns
-reports how universities move between patterns over time
-(Table~\ref{tab:markov}). Ordered profiles are displayed alongside $T$ and its
+applied through their stated observable criteria using thresholds prespecified
+before inspection, and the counts of supported, mixed, and unsupported cases
+are reported. Second, a Gaussian mixture on the concurrent profile
+$(A,R,E,D)$, with the number of components selected by BIC and cluster-wise
+stability \citep{fraley2002,hennig2007}, classifies university-period
+profiles into GMM states. Because the a-priori patterns are trajectory-level
+(multi-period) while GMM states are period-level, the cross-check first
+derives a trajectory label per university from its GMM-state sequence under the
+same prespecified rules, then compares the two labelings by adjusted Rand
+index on the common unit (universities) (Table~\ref{tab:gmm}); GMM adequacy
+is assessed for bounded and zero-inflated variables, skewed masses, and
+repeated observations from the same university. For universities with
+consecutive eligible cohorts, a first-order Markov transition matrix among
+the derived trajectory labels reports how universities move between labels
+over time (Table~\ref{tab:markov}), with classification uncertainty and the
+selective availability of consecutive cohorts reflected in the estimates.
+Ordered profiles are displayed alongside $T$ and its
 null (Figure~\ref{fig:states}B). The proposition that sustained exploration or
-recombination precedes structural transformation is tested by comparing the
-observed frequency of ``high-$R$/$E$ followed by sustained $T$ event'' with
-its frequency under within-university order permutations that preserve each
-university's profile values. A nonpositive or unstable contrast leaves the
-proposition unsupported.
+recombination precedes structural transformation is tested by comparing,
+within each university, the observed frequency of a ``high-$R$/$E$ period
+followed by a sustained $T$ event'' with its frequency under order
+permutations of that university's own profile values, recomputing $T$ events
+from the reordered sequence. The contrast is reported with a permutation
+interval; a nonpositive or unstable contrast leaves the proposition
+unsupported. The test assumes the profile values are exchangeable in time
+within a university, which is violated under strong trends or serial
+dependence and is checked via the sensitivity to window length.
 
-\emph{Scale versus structure.} To test whether the capability structure
+\emph{Scale versus structure.} To describe whether the capability structure
 differs beyond output scale, universities are grouped into patent-volume
-strata and the within-stratum dispersion of the five-dimension profile is
-tested against zero by bootstrap. The share of profile variance remaining
-after regression on log volume, field composition, and period quantifies the
-information added by relations. The five-dimension capability scores are then
-correlated with traditional output indicators---patent count, grant count, and
-forward-citation frequency (and incoPat quality ratings where available)---and
-rankings under the two families are compared by Kendall's $\tau$. Low partial
-correlation and divergent rankings support the claim that output indicators do
-not fully reveal the capability.
+strata and the within-stratum heterogeneity of the five-dimension profile is
+compared against a measurement-noise null estimated from the within-university
+bootstrap of each profile, rather than against zero; this separates genuine
+institutional differences from sampling and measurement error. The share of
+profile variance remaining after regression on log volume, field composition,
+and period is reported as descriptive evidence of variation not explained by
+scale or field, not as validation of the measures. The five-dimension
+capability structure is then compared with traditional output
+indicators---patent count, grant count, and forward-citation frequency (and
+incoPat quality ratings where available)---by partial correlation after
+volume control and by Kendall's $\tau$ between the two rank orderings of
+universities; because no single capability score is asserted, the ranking
+uses a prespecified scalar composite (e.g., the first principal component of
+the standardized profile) reported with its uncertainty. Low partial
+correlation and divergent rankings are read as descriptive evidence that the
+two families capture different things, not as proof that one is the more
+valid measure.
 
 \emph{Cases and sensitivity.} Twelve trajectories sampled across profile
 regions and size strata are assessed by two technically qualified raters from
@@ -431,10 +487,10 @@ adjusted Rand index of \pending{ARI} against the a-priori assignment,
 indicating \pending{agreement level}. Among \pending{count} universities with
 consecutive eligible cohorts, \pending{count} show at least one $T$ event
 above its null and \pending{count} show a sustained event; \pending{count}
-events are removed by the merger and IPC-revision audit. The first-order
-Markov transition matrix among patterns (Table~\ref{tab:markov}) reports
-\pending{switch rates}, showing how universities move between patterns over
-time. The contrast between observed and permuted ``exploration/recombination
+events are removed by the merger and IPC-revision audit. The first-order Markov transition matrix among the derived trajectory labels
+(Table~\ref{tab:markov}) reports \pending{switch rates}, showing how
+universities move between labels over time. The contrast between observed and
+permuted ``exploration/recombination
 then transformation'' sequences is \pending{effect and interval}.
 Figure~\ref{fig:states}B displays sampled ordered profiles with their $T$
 values.
@@ -443,13 +499,15 @@ values.
 \input{figures/figure4}
 
 \subsection{Scale versus structure}
-Within patent-volume strata, the five-dimension profiles show significant
-within-stratum dispersion (\pending{bootstrap $p$}), and \pending{share} of
-profile variance remains after adjustment for log volume, field, and period.
-The capability scores correlate with traditional output indicators at
-\pending{partial correlations}, and Kendall's $\tau$ between the two rankings
-is \pending{$\tau$}; both indicate that universities with similar output
-differ materially in knowledge-capability structure.
+Within patent-volume strata, the five-dimension profiles show within-stratum
+heterogeneity that exceeds the measurement-noise null
+(\pending{noise-aware $p$}), and \pending{share} of profile variance remains
+after adjustment for log volume, field, and period. The capability structure
+correlates with traditional output indicators at \pending{partial
+correlations}, and Kendall's $\tau$ between the two university rank orderings
+(capability composite vs traditional composite) is \pending{$\tau$}; these are
+read as descriptive evidence that universities with similar output differ in
+knowledge-capability structure.
 
 \subsection{Cases and sensitivity}
 Rater agreement on \pending{count} cases is \pending{agreement and kappa};
@@ -472,20 +530,23 @@ disagreement among representations visible and connects patent mapping
 \citep{kay2014,leydesdorff2014,yan2017} to capability measurement without
 collapsing the relations into one score.
 
-Empirically, universities with similar patent output differ materially in
-their five-dimension capability structures, and the three development patterns
-reveal distinct formation paths: steady-utilization universities consolidate
-and diffuse an established core; exploratory-innovation universities
-repeatedly enter novel directions and form unusual combinations;
-structural-recombination universities reorganize their portfolios across
-periods. These paths are not a performance ranking but a description of how
-innovation advantages form differently.
+Empirically, the analysis examines whether universities with similar patent
+output differ in their five-dimension capability structures and whether the
+three development patterns mark distinct paths: steady-utilization
+universities consolidate and diffuse an established core;
+exploratory-innovation universities repeatedly enter novel directions and
+form unusual combinations; structural-recombination universities reorganize
+their portfolios across periods. These paths are not a performance ranking;
+they describe how portfolios differ, not the causes of advantage formation,
+and the observational design supports differences and temporal associations
+rather than mechanisms.
 
 The design also states what a university-only corpus can support. It can
 describe knowledge sourcing, recombination, technological exploration, and
 knowledge diffusion among observed citers, and it can test whether a
-portfolio's composition changed more than its own year-to-year variation. It
-cannot establish economy-wide diffusion, reuse chains beyond one step, or the
+portfolio's composition changed more than expected under period-label
+exchangeability within the university. It cannot establish economy-wide
+diffusion, reuse chains beyond one step, or the
 causes of change.
 
 Other limits persist. Patents omit scientific, tacit, and unpatented knowledge.
@@ -504,11 +565,12 @@ knowledge-association structures. Four concurrent dimensions---knowledge
 sourcing, recombination, technological exploration, and knowledge
 diffusion---are measured from separate relation layers; dynamic transformation
 is assessed independently as sustained compositional change. Applied to 124
-Double-First-Class universities over 1990--2019, the framework shows that
-similar-output universities differ in capability structure and fall into three
-development patterns---steady utilization, exploratory innovation, and
-structural recombination---offering a process-based view of how innovation
-capability forms. The framework is specified against the actual boundaries of
+Double-First-Class universities over 1990--2019, the framework is used to examine whether
+similar-output universities differ in capability structure and whether they
+fall into three development patterns---steady utilization, exploratory
+innovation, and structural recombination---offering a process-based lens on
+how innovation capability is described that stops short of causal claims
+about its formation. The framework is specified against the actual boundaries of
 a university-only patent and citation corpus, so that its empirical claims are
 limited to what the data observe. Extensions with enterprise citing records
 would allow diffusion to be traced beyond the academic system, and
